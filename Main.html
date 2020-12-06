@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+<style>
+body{
+    background-color:#40b0ff;
+	}
+	table{
+	background-color:#00FF88;
+	height:200px;
+	width:200px;
+	padding:5px;
+	border-radius:15px;
+
+	box-shadow:15px 15px 15px rgba(0,0,0,0.1), inset 15px 15px 15px rgba(0,0,0,0.1),inset -5px -5px 5px rgba(0,0,0,0.1),inset -5px -5px 5px rgba(0,0,0,0.1);
+	}
+	     td{
+         padding:10px;
+	     }
+		     input{
+			 background-color:white;
+			 border:solid;
+			 border-color:green;
+			 box-shadow:-15px -15px 15px rgba(255,255,255,0.2),15px 15px 15px rgba(0,0,0,0.1),inset -5px -5px 5px rgba(255,255,255,0.2),inset 5px 5px 5px rgba(0,0,0,0.1);
+			 }
+         	     m{
+			     font-size:20px;
+			     font-weight:bold;
+			     text-decoration:underline;
+			     box-shadow:-15px -15px 15px rgba(255,255,255,0.2),15px 15px 15px rgba(0,0,0,0.1);
+			     }	
+   				     .box{
+					 position: absolute;
+					 
+					 width:400px;
+					 height: 400px;
+					 background-color:#fff;
+					 box-shadow: -10px 5px 30px rgba(0,0,0,0.5);
+					 box-sizing: border-box;
+					 } 
+					
+					 .box h3{
+					 position: relative;
+					 background: #169fff;
+					 color: #fff;
+					 text-align: center;
+					 font-size:36px;
+					 text-shadow:-2px 2px 10px rgba(0,0,0,0.5);
+					 }
+</style>
+
+</head>
+<body>
+ <div class="box">
+<h3 class="register-heading" align="center">
+PRACTICE FORM
+</h3>
+ <form method="post" autocomplete="off" name="google-sheet">
+ <table align="center">
+ <tr>
+ <td><m>Name:</m></td>
+ <td>
+ <div class="form-group">
+ <input type="text" name="Name" class="form-control" value="" required=""/>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td><m>Email:</m></td>
+ <td>
+ <div class="form-group">
+ <input type="text" name="Email" class="form-control"  value="" required=""/>
+ </div>
+ </td>
+ </tr>
+ <tr>
+ <td><m>Phone:</m></td>
+ <td>
+ <div class="form-group">
+ <input type="number" name="Phone" class="form-control" value="" required=""/>
+ </div>
+ </td>
+ </tr>
+  <tr>
+ <td><m>Link:</m></td>
+ <td>
+ <div class="form-group">
+ <input type="url" name="Link" class="form-control" value="" required="" />
+ </div>
+ </td>
+ </tr>
+ 
+ 
+ 
+ <tr id="submit">
+ <td></td>
+ <td>
+ <div class="form-group">
+ <input type="submit" name="submit" class="btnSubmit btn-block" value="Submit" bgcolor="white" />
+ </div>
+ </td>
+ </tr>
+ </table>
+ </form>         
+ </div> 
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxIRgyg6rSszKT3uVIV4OGSgGw2DePLRieBm7ubJcQ4_Zy48OBM/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
+            
+         
+    
+>
